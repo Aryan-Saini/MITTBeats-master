@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <script src="app.js" defer></script>
+  <title>MITTBeats</title>
+</head>
+<header>
+  <div class="tracking-in-expand-fwd">
+    <div class="nav-wrapper">
+      <div class="nav">
+        <ul>
+          <li class="search">
+            <i class="material-icons-outlined">search</i>
+            <form>
+              <input size="40" type="search" id="search-bar" placeholder="Search" />
+            </form>
+          </li>
+          <div class="options">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">New Music</a></li>
+            <li><a href="#">Library</a></li>
+            <li><a href="#">Downloads</a></li>
+            <li><a href="#">Categories</a></li>
+          </div>
+          <div class="hamburger">
+            <li><a href="#"><span class="material-icons-outlined">menu</span></a></li>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+<body>
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>before we begin...</p>
+      <form>
+        <label>Username</label>
+        <input class="input-name" type="text" placeholder="Enter your username">
+        <label>Email</label>
+        <input class="input-email" type="text" placeholder="Enter your email">
+      </form>
+    </div>
+
+  </div>
+  <aside>
+    <div class="tracking-in-expand-fwd">
+      <div class="sidebar-profile">
+        <!--sample profile image-->
+        <img src="img/pfpexample.jpg" alt="Profile Photo" />
+        <h3 class="user-name"></h3>
+        <p class="user-email"></p>
+
+        <div class="sidebar-options">
+          <ul>
+            <li>
+              <a href="#"><span class="material-icons-outlined">radio</span>Radio</a>
+            </li>
+            <li>
+              <a href="#"><span class="material-icons-outlined">featured_play_list</span>My
+                Music</a>
+            </li>
+            <li>
+              <a href="#"><span class="material-icons-outlined">videocam</span>Video</a>
+            </li>
+            <li>
+              <a href="#"><span class="material-icons-outlined">podcasts</span>Podcast</a>
+            </li>
+            <li>
+              <a href="#"><span class="material-icons-outlined">music_video</span>Artists</a>
+            </li>
+            <li>
+              <a href="#"><span class="material-icons-outlined">logout</span>Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </aside>
+  <div class="body-content">
+    <div class="tracking-in-contract">
+      <div class="top-ten">
+        <h2 class="labels">Today's Top 10 Songs</h2>
+        <div>
+          <ul class="top-songs"></ul>
+        </div>
+      </div>
+    </div>
+    <div class="song-audio">
+      <iframe height="50" width="500" src=""></iframe>
+    </div>
+
+    <div class="tracking-in-contract">
+      <div class="featured-artists">
+        <h2 class="labels">Featured Artists</h2>
+        <ul class="artists">
+
+        </ul>
+      </div>
+    </div>
+    <div class="currently-playing-song">
+      <!-- 
+        ***sample code***
+          <img />
+          <h4>Song Name</h4>
+          <p class="artist-name">Artist Name</p>
+          <iframe height="50" width="500" src=""></iframe>
+          <span class="material-icons-outlined">more_vert</span>
+      -->
+    </div>
+  </div>
+</body>
+
+</html>

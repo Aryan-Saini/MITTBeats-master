@@ -1,0 +1,689 @@
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  background: #2e2d2d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.material-icons-outlined {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 40px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  margin-right: 3px;
+  position: relative;
+  top: 5px;
+  right: 5px;
+}
+
+main {
+  margin-left: 300px;
+}
+
+.song {
+  overflow: hidden;
+  min-width: 200px;
+  position: relative;
+}
+
+.song-name {
+  font-size: 27px;
+}
+
+.play-button {
+  margin: 30px 40px 40px 40px;
+  text-decoration: none;
+}
+
+.play-button a {
+  text-align: center;
+  line-height: 50px;
+  vertical-align: middle;
+  padding: 30px;
+}
+
+.play-button a.active {
+  color: #40ffc2;
+}
+
+.play-button a:hover:not(.active) {
+  color: #40ffc2;
+}
+
+.song img {
+  display: block;
+  transition: all 1s ease;
+}
+
+.song .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  padding: 20px;
+  pointer-events: none;
+  opacity: 0;
+  width: 100%;
+  transition: opacity 0.125s ease;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.song:hover img {
+  transform: scale(1.25);
+}
+
+.song:hover .overlay {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.nav {
+  position: sticky;
+}
+
+.nav li {
+  display: inline-block;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.nav a {
+  text-decoration: none;
+  color: white;
+  padding: 2px;
+  display: inline-block;
+}
+
+.nav a:hover {
+  border-bottom: 5px solid #40ffc2;
+}
+
+.number {
+  font-size: 200px;
+  margin: 0;
+  padding-left: 15px;
+  color: rgba(0, 0, 0, 0);
+  -webkit-text-stroke: 5px #8a8a8a;
+}
+
+.nav ul {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  height: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.search {
+  position: relative;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  margin-left: 50px;
+}
+
+.search input {
+  border-radius: 10px;
+  border: 0 solid;
+  padding: 10px;
+  text-indent: 30px;
+}
+
+.search .material-icons-outlined {
+  font-size: 24px;
+  color: black;
+  position: absolute;
+  top: 18px;
+  left: 7px;
+  width: 30px;
+}
+
+.options {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-right: 50px;
+}
+
+.options li {
+  padding: 5px;
+  margin: auto;
+}
+
+.nav-wrapper {
+  width: 100%;
+  background-color: #383737;
+  border-radius: 20px;
+}
+
+.tracking-in-expand-fwd {
+  -webkit-animation: tracking-in-expand-fwd 0.8s
+    cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.61, 0.355, 1)
+    both;
+}
+
+.top-ten {
+  margin-left: 30px;
+  position: relative;
+  max-width: 95%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  height: 400px;
+}
+
+.recently-played {
+  margin-left: 30px;
+}
+
+.labels {
+  font-size: 40px;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+.top-songs {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  height: 400px;
+  margin: 0;
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tracking-in-contract {
+  -webkit-animation: tracking-in-contract 0.8s
+    cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  animation: tracking-in-contract 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}
+
+header {
+  padding: 0;
+}
+
+.body-content {
+  margin-left: 300px;
+}
+
+aside {
+  border-right: 1px solid #383737;
+  overflow-y: hidden;
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 300px;
+  background-color: #2e2d2d;
+  position: fixed;
+  height: 100%;
+  color: white;
+}
+
+aside img {
+  width: 150px;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+aside img,
+aside ul,
+aside a {
+  display: block;
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+}
+
+aside li {
+  display: block;
+  color: white;
+  padding: 2px 16px 2px 16px;
+  text-decoration: none;
+}
+
+aside a {
+  padding-bottom: 20px;
+  font-size: 18px;
+}
+
+aside h3,
+aside p {
+  display: block;
+  color: #40ffc2;
+  text-align: center;
+  margin: 0;
+}
+
+aside h3 {
+  font-size: 24px;
+}
+
+aside p {
+  color: grey;
+  font-size: 10px;
+}
+
+aside a.active {
+  background-color: #40ffc2;
+  color: white;
+}
+
+aside a:hover:not(.active) {
+  background-color: #40ffc2;
+  color: black;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.featured-artists {
+  margin-left: 30px;
+}
+
+.artists-song img {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  margin-left: 30px;
+}
+
+.artist-name {
+  text-decoration: underline;
+  color: #40ffc2;
+}
+
+.artists-song li {
+  list-style: none;
+}
+
+.artists-song {
+  display: flex;
+  justify-content: space-between;
+  width: 97%;
+  padding: 5px;
+  border-bottom: 2px solid #8a8a8a;
+}
+
+.body-content a {
+  text-decoration: none;
+  color: white;
+}
+
+.artists-song .right {
+  text-align: right;
+  font-size: 26px;
+}
+
+.artists {
+  content: "";
+  display: table;
+  clear: both;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.featured-song {
+  background-color: #383737;
+  margin-top: 15px;
+  margin-bottom: 30px;
+  margin-right: 40px;
+  padding: 10px;
+  float: left;
+  border-radius: 30px;
+  width: 46%;
+  padding: 10px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.featured-song img {
+  width: 200px;
+  margin-left: 30px;
+  border-radius: 50%;
+}
+
+.featured-song h3 {
+  display: inline-block;
+  padding: 7px;
+  text-align: right;
+  color: white;
+  font-size: 24px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: block; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  color: black;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%;
+}
+
+.modal-content input {
+  display: block;
+  width: 90%;
+  padding: 10px;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 15px;
+}
+
+.modal-content label {
+  margin-bottom: 15px;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.artist-profile {
+  display: flex;
+  align-items: center;
+}
+
+.artist-profile img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+  width: 300px;
+  margin: 30px;
+}
+
+.artist-profile h3 {
+  font-size: 36px;
+  text-transform: uppercase;
+}
+
+.artist-text #artist {
+  font-size: 24px;
+}
+
+.artist-text {
+  display: block;
+}
+
+.hamburger {
+  display: none;
+}
+
+.song-audio {
+  display: flex;
+  justify-content: center;
+}
+
+.song-audio iframe {
+  background-color: white;
+  border: 2px solid white;
+}
+
+.container .song-audio {
+  margin: 50px;
+}
+
+.lyrics {
+  height: 500px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-size: 15px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #40ffc2;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ff40b6;
+}
+
+.button {
+  font-size: 1em;
+  padding: 10px;
+  color: #fff;
+  margin-top: 50px;
+  margin-right: 55px;
+  border: 2px solid #40ffc2;
+  border-radius: 30px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+.button:hover {
+  background: #40ffc2;
+  color: #000;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 14%;
+  position: relative;
+  transition: all 5s ease-in-out;
+  height: 500px;
+}
+
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+.popup .close:hover {
+  color: #40ffc2;
+}
+
+.popup .content {
+  width: 150px;
+  text-align: center;
+}
+
+.song-info a {
+  color: #40ffc2;
+}
+
+@media only screen and (max-width: 1330px) {
+  .featured-song {
+    width: 100%;
+  }
+
+  .featured-artists {
+    margin-right: 30px;
+  }
+}
+
+@media only screen and (max-width: 1030px) {
+  aside {
+    display: none;
+  }
+
+  .body-content {
+    margin: 0;
+  }
+
+  .featured-artists {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+}
+
+@media only screen and (max-width: 870px) {
+  .options {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2021-4-13 9:44:11
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation tracking-in-expand-fwd
+ * ----------------------------------------
+ */
+@-webkit-keyframes tracking-in-expand-fwd {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-transform: translateZ(-700px);
+    transform: translateZ(-700px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-expand-fwd {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-transform: translateZ(-700px);
+    transform: translateZ(-700px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2021-4-13 9:59:22
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation tracking-in-contract
+ * ----------------------------------------
+ */
+@-webkit-keyframes tracking-in-contract {
+  0% {
+    letter-spacing: 1em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    letter-spacing: normal;
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-contract {
+  0% {
+    letter-spacing: 1em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    letter-spacing: normal;
+    opacity: 1;
+  }
+}
